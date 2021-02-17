@@ -5,10 +5,10 @@ ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT 1
 
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y curl wget 
+RUN apt install -y wget 
 RUN useradd -d /home/container -m container
 
-RUN curl -sSL https://umod.io/umod-develop.sh | bash /dev/stdin
+RUN wget -q https://umod.io/umod-develop.sh | bash /dev/stdin
 
 USER container
 ENV  USER container
